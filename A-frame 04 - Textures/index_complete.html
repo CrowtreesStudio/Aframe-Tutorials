@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A-frame Tutorial 04</title>
+    <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-environment-component@1.3.1/dist/aframe-environment-component.min.js"></script>
+    <script src="components/code.js"></script>
+</head>
+<body>
+    <a-scene renderer="colorManagement:true;">
+        <a-assets>
+            <a-asset-item id="cube" src="assets/cube_texture.glb" ></a-asset-item>
+            <!-- http://free-texture-site.blogspot.com/2010/10/free-wooden-crate-texture.html -->
+            <img id="crate" src="assets/crate_texture.jpg">
+        </a-assets>
+        <a-box position="0.75 0.7 -4" rotation="0 45 0" color="#fff" src="#crate" material="side:front;" shadow repeat="1.01 1.01" offset="0 0" animation="property:offset; to:1 0; dur:5000; easing:linear; loop:true;"></a-box>
+        <a-gltf-model src="#cube" position="-0.75 0.7 -4" rotation="0 45 0" mesh-shadows></a-gltf-model>
+        <a-entity environment="preset: moon;shadow: true; shadowSize:10; lightPosition:1.4 1.8 0;"></a-entity>
+    </a-scene>
+</body>
+</html>
